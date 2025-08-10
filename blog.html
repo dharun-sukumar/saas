@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - SaasFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="font-inter bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-blue-600">SaasFlow</a>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <!-- Home Dropdown -->
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                                Home
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+                                <div class="py-1">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home V1</a>
+                                    <a href="index-v2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home V2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="pricing.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="blog.html" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                        <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Portfolio</a>
+                        <!-- Dashboard Dropdown -->
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                                Dashboard
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+                                <div class="py-1">
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Admin</a>
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">User</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- RTL Toggle & Auth Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="rtlToggle" class="p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                        <i data-lucide="languages" class="w-5 h-5"></i>
+                    </button>
+                    <a href="login.html" class="text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                    <a href="register.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Sign Up</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-700 hover:text-blue-600 p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home V1</a>
+                <a href="index-v2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home V2</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="pricing.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Pricing</a>
+                <a href="blog.html" class="block px-3 py-2 text-blue-600">Blog</a>
+                <a href="portfolio.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Portfolio</a>
+                <a href="admin-dashboard.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Admin Dashboard</a>
+                <a href="user-dashboard.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">User Dashboard</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                <div class="border-t border-gray-100 pt-4">
+                    <a href="login.html" class="block px-3 py-2 text-blue-600">Login</a>
+                    <a href="register.html" class="block px-3 py-2 text-white bg-blue-600 rounded-md mx-3 text-center">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Blog</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Categories -->
+    <section class="py-8 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <!-- Search Bar -->
+                <div class="relative w-full md:w-96">
+                    <input type="text" placeholder="Search articles..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <i data-lucide="search" class="absolute left-3 top-2.5 h-5 w-5 text-gray-400"></i>
+                </div>
+                
+                <!-- Categories -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium">All</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-medium transition-colors">Technology</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-medium transition-colors">Business</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-medium transition-colors">Tips</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-full text-sm font-medium transition-colors">Updates</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Featured Article</h2>
+                <p class="text-gray-600">Our top story this week</p>
+            </div>
+            
+            <div class="blog-post bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                    <div class="h-64 lg:h-auto bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i data-lucide="newspaper" class="w-16 h-16 mx-auto mb-4"></i>
+                            <p class="text-lg opacity-80">Featured Article Image</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8 lg:p-12">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Technology</span>
+                            <span class="text-gray-400 text-sm ml-4">December 15, 2024</span>
+                        </div>
+                        
+                        <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">The Future of SaaS: Trends to Watch in 2025</h3>
+                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                                    JS
+                                </div>
+                                <div class="ml-3">
+                                    <div class="font-medium text-gray-900">John Smith</div>
+                                    <div class="text-sm text-gray-600">Senior Writer</div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">
+                                Read More
+                                <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Latest Articles</h2>
+                <p class="text-gray-600">Stay updated with our latest insights and news</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="blog-post bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i data-lucide="code" class="w-12 h-12 mx-auto mb-2"></i>
+                            <p class="text-sm opacity-80">Article Image</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Technology</span>
+                            <span class="text-gray-400 text-xs ml-3">Dec 10, 2024</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Building Scalable Web Applications</h3>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold text-xs">
+                                    MD
+                                </div>
+                                <div class="ml-2">
+                                    <div class="font-medium text-gray-900 text-sm">Maria Davis</div>
+                                </div>
+                            </div>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-post bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i data-lucide="trending-up" class="w-12 h-12 mx-auto mb-2"></i>
+                            <p class="text-sm opacity-80">Article Image</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">Business</span>
+                            <span class="text-gray-400 text-xs ml-3">Dec 8, 2024</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Growing Your SaaS Business</h3>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-xs">
+                                    RJ
+                                </div>
+                                <div class="ml-2">
+                                    <div class="font-medium text-gray-900 text-sm">Robert Johnson</div>
+                                </div>
+                            </div>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-post bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i data-lucide="lightbulb" class="w-12 h-12 mx-auto mb-2"></i>
+                            <p class="text-sm opacity-80">Article Image</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-1 rounded">Tips</span>
+                            <span class="text-gray-400 text-xs ml-3">Dec 5, 2024</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">10 Productivity Tips for Remote Teams</h3>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white font-semibold text-xs">
+                                    SK
+                                </div>
+                                <div class="ml-2">
+                                    <div class="font-medium text-gray-900 text-sm">Sarah Kim</div>
+                                </div>
+                            </div>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-post bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i data-lucide="shield" class="w-12 h-12 mx-auto mb-2"></i>
+                            <p class="text-sm opacity-80">Article Image</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">Security</span>
+                            <span class="text-gray-400 text-xs ml-3">Dec 3, 2024</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Best Practices for SaaS Security</h3>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-xs">
+                                    AL
+                                </div>
+                                <div class="ml-2">
+                                    <div class="font-medium text-gray-900 text-sm">Alex Lee</div>
+                                </div>
+                            </div>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-post bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-pink-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i data-lucide="users" class="w-12 h-12 mx-auto mb-2"></i>
+                            <p class="text-sm opacity-80">Article Image</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded">Team</span>
+                            <span class="text-gray-400 text-xs ml-3">Dec 1, 2024</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Building High-Performance Teams</h3>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white font-semibold text-xs">
+                                    TW
+                                </div>
+                                <div class="ml-2">
+                                    <div class="font-medium text-gray-900 text-sm">Taylor Wilson</div>
+                                </div>
+                            </div>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-post bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-teal-400 to-green-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i data-lucide="globe" class="w-12 h-12 mx-auto mb-2"></i>
+                            <p class="text-sm opacity-80">Article Image</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2 py-1 rounded">Updates</span>
+                            <span class="text-gray-400 text-xs ml-3">Nov 28, 2024</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Global Expansion Strategies</h3>
+                        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white font-semibold text-xs">
+                                    CG
+                                </div>
+                                <div class="ml-2">
+                                    <div class="font-medium text-gray-900 text-sm">Chris Garcia</div>
+                                </div>
+                            </div>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-16 bg-blue-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-4">Stay Updated</h2>
+            <p class="text-xl text-blue-100 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" id="newsletterForm">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-blue-300" required>
+                <button type="submit" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-blue-400">SaasFlow</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="pricing.html" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Random Name — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

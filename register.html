@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SaasFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-100 px-4 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">SaasFlow</a>
+            <div class="flex items-center space-x-4">
+                <button id="rtlToggle" class="p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                    <i data-lucide="languages" class="w-5 h-5"></i>
+                </button>
+                <a href="login.html" class="text-gray-600 hover:text-gray-900">Already have an account? Sign in</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Register Form -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <div>
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Create Your Account</h2>
+                    <p class="text-gray-600">Start your free trial today</p>
+                </div>
+            </div>
+            
+            <div class="bg-white py-8 px-6 shadow-xl rounded-lg">
+                <form class="space-y-6" id="registerForm">
+                    <div>
+                        <label for="firstName" class="sr-only">First Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="user" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input id="firstName" name="firstName" type="text" required class="form-input appearance-none rounded-md relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="First Name">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="lastName" class="sr-only">Last Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="user" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input id="lastName" name="lastName" type="text" required class="form-input appearance-none rounded-md relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Last Name">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="sr-only">Email address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="mail" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input id="email" name="email" type="email" required class="form-input appearance-none rounded-md relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Email address">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="company" class="sr-only">Company</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="building" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input id="company" name="company" type="text" class="form-input appearance-none rounded-md relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Company (Optional)">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="password" class="sr-only">Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="lock" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input id="password" name="password" type="password" required class="form-input appearance-none rounded-md relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Password">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center" onclick="togglePassword('password')">
+                                <i data-lucide="eye" class="h-5 w-5 text-gray-400 hover:text-gray-600" id="passwordToggleIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="confirmPassword" class="sr-only">Confirm Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="lock" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input id="confirmPassword" name="confirmPassword" type="password" required class="form-input appearance-none rounded-md relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Confirm Password">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center" onclick="togglePassword('confirmPassword')">
+                                <i data-lucide="eye" class="h-5 w-5 text-gray-400 hover:text-gray-600" id="confirmPasswordToggleIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Password Strength Indicator -->
+                    <div class="space-y-2">
+                        <div class="text-sm text-gray-600">Password strength:</div>
+                        <div class="flex space-x-1">
+                            <div class="h-2 w-full bg-gray-200 rounded-full">
+                                <div id="passwordStrength" class="h-2 bg-red-500 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div id="passwordStrengthText" class="text-xs text-gray-500"></div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="terms" name="terms" type="checkbox" required class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="terms" class="text-gray-500">
+                                I agree to the
+                                <a href="#" class="text-blue-600 hover:text-blue-500">Terms of Service</a>
+                                and
+                                <a href="#" class="text-blue-600 hover:text-blue-500">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="newsletter" name="newsletter" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="newsletter" class="text-gray-500">
+                                Subscribe to our newsletter for updates and tips
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                                <i data-lucide="user-plus" class="h-5 w-5 text-blue-500 group-hover:text-blue-400"></i>
+                            </span>
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Divider -->
+                <div class="mt-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or sign up with</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-2 gap-3">
+                        <button type="button" class="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors">
+                            <i data-lucide="chrome" class="h-5 w-5"></i>
+                            <span class="ml-2">Google</span>
+                        </button>
+                        <button type="button" class="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors">
+                            <i data-lucide="github" class="h-5 w-5"></i>
+                            <span class="ml-2">GitHub</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Features List -->
+                <div class="mt-6 space-y-2">
+                    <p class="text-sm font-medium text-gray-900">What you get:</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                            14-day free trial
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                            No credit card required
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                            Cancel anytime
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>
+                            Full access to all features
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-sm text-gray-600">
+                    Already have an account?
+                    <a href="login.html" class="font-medium text-blue-600 hover:text-blue-500 ml-1">Sign in here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        function togglePassword(fieldId) {
+            const passwordInput = document.getElementById(fieldId);
+            const toggleIcon = document.getElementById(fieldId + 'ToggleIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.setAttribute('data-lucide', 'eye');
+            }
+            
+            lucide.createIcons();
+        }
+
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthBar = document.getElementById('passwordStrength');
+            const strengthText = document.getElementById('passwordStrengthText');
+            
+            let strength = 0;
+            let strengthLabel = '';
+            let color = '';
+            
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^a-zA-Z0-9]/.test(password)) strength++;
+            
+            switch (strength) {
+                case 0:
+                case 1:
+                    strengthLabel = 'Very Weak';
+                    color = 'bg-red-500';
+                    break;
+                case 2:
+                    strengthLabel = 'Weak';
+                    color = 'bg-orange-500';
+                    break;
+                case 3:
+                    strengthLabel = 'Fair';
+                    color = 'bg-yellow-500';
+                    break;
+                case 4:
+                    strengthLabel = 'Good';
+                    color = 'bg-blue-500';
+                    break;
+                case 5:
+                    strengthLabel = 'Strong';
+                    color = 'bg-green-500';
+                    break;
+            }
+            
+            const width = (strength / 5) * 100;
+            strengthBar.style.width = width + '%';
+            strengthBar.className = `h-2 rounded-full transition-all duration-300 ${color}`;
+            strengthText.textContent = password.length > 0 ? strengthLabel : '';
+        });
+
+        // Form validation
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Passwords do not match!');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
