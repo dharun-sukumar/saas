@@ -3,6 +3,13 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* Cancel a global RTL mirror for specific things (icons, logos, images) */
+html[dir="rtl"] .no-rtl-flip { 
+  transform: scaleX(-1) !important; /* cancels parent's -1 */
+  transform-origin: center; 
+}
+
+
 /* Custom Animations */
 @keyframes fadeInUp {
     from {

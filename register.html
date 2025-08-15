@@ -10,21 +10,98 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body class="font-inter bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-100 px-4 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-blue-600">SaasFlow</a>
-            <div class="flex items-center space-x-4">
-                <button id="rtlToggle" class="p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
-                    <i data-lucide="languages" class="w-5 h-5"></i>
-                </button>
-                <a href="login.html" class="text-gray-600 hover:text-gray-900">Already have an account? Sign in</a>
+     <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html">
+                        <span class="text-2xl font-bold text-blue-600">SaasFlow</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <!-- Home Dropdown -->
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                                Home
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+                                <div class="py-1">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home 1</a>
+                                    <a href="index-v2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="pricing.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="blog.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                        <a href="portfolio.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Portfolio</a>
+                        <!-- Dashboard Dropdown -->
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                                Dashboard
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+                                <div class="py-1">
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Admin</a>
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">User</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- RTL Toggle & Auth Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="rtlToggle" class="p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                        <i data-lucide="languages" class="w-5 h-5"></i>
+                    </button>
+                    <a href="login.html" class="text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                    <a href="register.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Sign Up</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-700 hover:text-blue-600 p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 h-[100vh] md:h-auto">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home V1</a>
+                <a href="index-v2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home V2</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="pricing.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Pricing</a>
+                <a href="blog.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Blog</a>
+                <a href="portfolio.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Portfolio</a>
+                <a href="admin-dashboard.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Admin Dashboard</a>
+                <a href="user-dashboard.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">User Dashboard</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                <div class="border-t border-gray-100 pt-4">
+                    <button id="rtlToggleMobile" class="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 w-full">
+                        <i data-lucide="languages" class="w-5 h-5 mr-2"></i>
+                        Toggle RTL
+                    </button>
+                    <a href="login.html" class="block px-3 py-2 text-blue-600">Login</a>
+                    <a href="register.html" class="block px-3 py-2 text-white bg-blue-600 rounded-md mx-3 text-center">Sign Up</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Register Form -->
-    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen pt-20 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <div>
                 <div class="text-center">

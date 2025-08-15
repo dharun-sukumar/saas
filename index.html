@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        [data-lucide] svg {
+            transform: scaleX(1);
+            direction: ltr;
+        }
+    </style>
 </head>
 <body class="font-inter bg-white text-gray-800">
     <!-- Navigation -->
@@ -17,7 +23,9 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
+                        <a href="index.html">
                         <span class="text-2xl font-bold text-blue-600">SaasFlow</span>
+                        </a>
                     </div>
                 </div>
                 
@@ -31,8 +39,8 @@
                             </button>
                             <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
                                 <div class="py-1">
-                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home V1</a>
-                                    <a href="index-v2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home V2</a>
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home 1</a>
+                                    <a href="index-v2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home 2</a>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +84,7 @@
         
         <!-- Mobile Navigation -->
         <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100">
-            <div class="px-2 pt-2 pb-3 space-y-1">
+            <div class="px-2 pt-2 pb-3 space-y-1 h-[100vh] md:h-auto">
                 <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home V1</a>
                 <a href="index-v2.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home V2</a>
                 <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
@@ -122,16 +130,9 @@
             
             <!-- Hero Image -->
             <div class="mt-16 animate-fadeInUp delay-300">
-                <div class="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl">
-                    <div class="bg-white rounded-xl shadow-2xl p-6">
-                        <div class="h-96 bg-gradient-to-br from-blue-100 via-green-50 to-amber-50 rounded-lg flex items-center justify-center">
-                            <div class="text-center">
-                                <i data-lucide="monitor" class="w-24 h-24 text-blue-600 mx-auto mb-4"></i>
-                                <p class="text-gray-600 text-lg">Dashboard Preview</p>
-                            </div>
+                        <div class="h-96 rounded-lg flex items-center justify-center">
+                            <img src="https://s3.envato.com/files/503370354/03_preview.png" alt="Dashboard Preview" class="h-full w-auto rounded-lg shadow-lg object-contain" />
                         </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -241,15 +242,15 @@
                         <span class="text-2xl font-bold text-blue-400">SaasFlow</span>
                     </div>
                     <p class="text-gray-400 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors ml-3" aria-label="Twitter">
+                            <i data-lucide="twitter" class="w-5 h-5" style="direction: ltr;"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-5 h-5" style="direction: ltr;"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                            <i data-lucide="github" class="w-5 h-5"></i>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="GitHub">
+                            <i data-lucide="github" class="w-5 h-5" style="direction: ltr;"></i>
                         </a>
                     </div>
                 </div>
@@ -286,11 +287,16 @@
             </div>
             
             <div class="border-t border-gray-800 pt-8 mt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 Random Name — All Rights Reserved.</p>
+                <p class="text-gray-400">&copy; 2025 Random Name — All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons({ attrs: { style: 'transform: scaleX(1); direction: ltr;' } });
+        });
+    </script>
 </body>
 </html>

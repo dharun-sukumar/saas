@@ -77,18 +77,19 @@ function initializeMobileMenu() {
  */
 function initializeRTLToggle() {
     const rtlToggle = document.getElementById('rtlToggle');
-    
-    if (rtlToggle) {
+    const rtlToggleMobile = document.getElementById('rtlToggleMobile');
+
+    // Attach event listeners to both desktop and mobile RTL toggles
+    if (rtlToggle || rtlToggleMobile) {
         // Check for saved RTL preference
         const isRTL = localStorage.getItem('rtl') === 'true';
         if (isRTL) {
             document.documentElement.classList.add('rtl');
             document.dir = 'rtl';
         }
-        
-        rtlToggle.addEventListener('click', function() {
+
+        function handleRTLToggled() {
             const isCurrentlyRTL = document.documentElement.classList.contains('rtl');
-            
             if (isCurrentlyRTL) {
                 document.documentElement.classList.remove('rtl');
                 document.dir = 'ltr';
@@ -98,10 +99,15 @@ function initializeRTLToggle() {
                 document.dir = 'rtl';
                 localStorage.setItem('rtl', 'true');
             }
-            
-            // Show notification
             showNotification(isCurrentlyRTL ? 'Switched to LTR' : 'Switched to RTL');
-        });
+        }
+
+        if (rtlToggle) {
+            rtlToggle.addEventListener('click', handleRTLToggled);
+        }
+        if (rtlToggleMobile) {
+            rtlToggleMobile.addEventListener('click', handleRTLToggled);
+        }
     }
 }
 
