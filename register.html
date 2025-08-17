@@ -113,7 +113,7 @@
             <div class="bg-white py-8 px-6 shadow-xl rounded-lg">
                 <form class="space-y-6" id="registerForm">
                     <div>
-                        <label for="firstName" class="sr-only">First Name</label>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i data-lucide="user" class="h-5 w-5 text-gray-400"></i>
@@ -123,7 +123,7 @@
                     </div>
                     
                     <div>
-                        <label for="lastName" class="sr-only">Last Name</label>
+                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i data-lucide="user" class="h-5 w-5 text-gray-400"></i>
@@ -133,7 +133,7 @@
                     </div>
                     
                     <div>
-                        <label for="email" class="sr-only">Email address</label>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email address *</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i data-lucide="mail" class="h-5 w-5 text-gray-400"></i>
@@ -143,7 +143,7 @@
                     </div>
                     
                     <div>
-                        <label for="company" class="sr-only">Company</label>
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company *</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i data-lucide="building" class="h-5 w-5 text-gray-400"></i>
@@ -153,28 +153,22 @@
                     </div>
                     
                     <div>
-                        <label for="password" class="sr-only">Password</label>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password *</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i data-lucide="lock" class="h-5 w-5 text-gray-400"></i>
                             </div>
                             <input id="password" name="password" type="password" required class="form-input appearance-none rounded-md relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Password">
-                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center" onclick="togglePassword('password')">
-                                <i data-lucide="eye" class="h-5 w-5 text-gray-400 hover:text-gray-600" id="passwordToggleIcon"></i>
-                            </button>
                         </div>
                     </div>
                     
                     <div>
-                        <label for="confirmPassword" class="sr-only">Confirm Password</label>
+                        <label for="confirmPassword" class="sr-only">Confirm Password *</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i data-lucide="lock" class="h-5 w-5 text-gray-400"></i>
                             </div>
                             <input id="confirmPassword" name="confirmPassword" type="password" required class="form-input appearance-none rounded-md relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Confirm Password">
-                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center" onclick="togglePassword('confirmPassword')">
-                                <i data-lucide="eye" class="h-5 w-5 text-gray-400 hover:text-gray-600" id="confirmPasswordToggleIcon"></i>
-                            </button>
                         </div>
                     </div>
 
@@ -189,7 +183,7 @@
                         <div id="passwordStrengthText" class="text-xs text-gray-500"></div>
                     </div>
 
-                    <div class="flex items-start">
+                    <div class="flex items-start gap-2">
                         <div class="flex items-center h-5">
                             <input id="terms" name="terms" type="checkbox" required class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
                         </div>
@@ -203,7 +197,7 @@
                         </div>
                     </div>
 
-                    <div class="flex items-start">
+                    <div class="flex items-start gap-2">
                         <div class="flex items-center h-5">
                             <input id="newsletter" name="newsletter" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
                         </div>
@@ -251,19 +245,19 @@
                 <div class="mt-6 space-y-2">
                     <p class="text-sm font-medium text-gray-900">What you get:</p>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li class="flex items-center">
+                        <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>
                             14-day free trial
                         </li>
-                        <li class="flex items-center">
+                        <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>
                             No credit card required
                         </li>
-                        <li class="flex items-center">
+                        <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>
                             Cancel anytime
                         </li>
-                        <li class="flex items-center">
+                        <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>
                             Full access to all features
                         </li>
